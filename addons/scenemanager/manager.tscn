@@ -5,7 +5,6 @@
 [node name="Manager" type="Node"]
 script = ExtResource("1_puqvp")
 sceneDictionary = {
-"cookie": "res://Scenes/cookie.tscn",
 "game": "res://Scenes/game/game.tscn",
 "main": "res://Scenes/main/main.tscn",
 "pause": "res://Scenes/pause/pause.tscn"

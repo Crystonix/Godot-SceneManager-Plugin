@@ -22,3 +22,7 @@ Manager="*res://addons/scenemanager/manager.tscn"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/scenemanager/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

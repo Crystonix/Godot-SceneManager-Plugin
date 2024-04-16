@@ -12,7 +12,6 @@ func _process(delta):
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_focus_next"):
-		print(scene_file_path)
 		Manager.switch_scene(scene_file_path, "pause")
 	if Input.is_action_just_pressed("ui_cancel"):
 		Manager.switch_scene(scene_file_path, "main")
