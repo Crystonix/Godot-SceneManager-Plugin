@@ -26,6 +26,7 @@ func _ready():
 
 #region editor functionality
 func add_scene(scene_path:String):
+	print_debug("test dict print: ", scenesResource.scenesDictionary)
 	var scene_name = scene_path.get_file().get_basename()
 	scenesResource.scenesDictionary[scene_name] = scene_path
 	saveResource(scenesResource)
@@ -49,6 +50,9 @@ func get_scene_names() -> String:
 func load_scenes() -> Dictionary:
 	var loaded_resource = preload(resPath)
 	if loaded_resource:
+		scenesResource = loaded_resource
+		print("scene res load success")
+		print(scenesResource.scenesDictionary)
 		return loaded_resource.scenesDictionary
 	else:
 		print("Resource not found, creating a new one...")
