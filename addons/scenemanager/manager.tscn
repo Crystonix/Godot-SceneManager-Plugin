@@ -4,8 +4,5 @@
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_puqvp")
-sceneDictionary = {
-"game": "res://Scenes/game/game.tscn",
-"main": "res://Scenes/main/main.tscn",
-"pause": "res://Scenes/pause/pause.tscn"
-}
+
+[connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]

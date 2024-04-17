@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c57qtxhrakjjm"]
+
+[ext_resource type="Script" path="res://addons/scenemanager/scene_manger_dock.gd" id="1_nbcbj"]
+
+[node name="SceneManager" type="PanelContainer" node_paths=PackedStringArray("sceneNamesLabel")]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nbcbj")
+sceneNamesLabel = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="addCurrentSceneButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "addCurrentScene"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "no scenes saved"
+
+[connection signal="pressed" from="VBoxContainer/addCurrentSceneButton" to="." method="_on_add_current_scene_button_pressed"]
