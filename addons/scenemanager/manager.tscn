@@ -4,5 +4,8 @@
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_puqvp")
+sceneDictionary = {
+"default": "default"
+}
 
 [connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]

@@ -1,13 +1,21 @@
 @tool
 extends Node
 
-@export var sceneDictionary:Dictionary
+@export var scenesResource:sceneResource
+@export var sceneDictionary:Dictionary = {}
 
+const resPath:String = "res://addons/scenemanager/Resources/scenesResource.tres"
 var main_scene = null
 
 signal scene_changed
 
+func _enter_tree():
+	sceneDictionary = load_scenes()
+
 func _ready():
+	
+	print_debug("data: ", sceneDictionary)
+	
 	scene_changed.connect(_on_scene_changed)
 	
 	main_scene = get_tree().get_current_scene()
@@ -19,7 +27,8 @@ func _ready():
 #region editor functionality
 func add_scene(scene_path:String):
 	var scene_name = scene_path.get_file().get_basename()
-	sceneDictionary[scene_name] = scene_path
+	scenesResource.scenesDictionary[scene_name] = scene_path
+	saveResource(scenesResource)
 	print(sceneDictionary)
 	
 func get_scene(scene_name:String):
@@ -36,7 +45,23 @@ func get_scene_names() -> String:
 		keys_string += key + ", "
 	keys_string = keys_string.rstrip(", ")
 	return keys_string
-		
+	
+func load_scenes() -> Dictionary:
+	var loaded_resource = preload(resPath)
+	if loaded_resource:
+		return loaded_resource.scenesDictionary
+	else:
+		print("Resource not found, creating a new one...")
+		scenesResource = scenesResource.new()
+		saveResource(scenesResource)
+		return scenesResource.scenesDictionary
+	
+func saveResource(res:Resource):
+	var error = ResourceSaver.save(scenesResource, resPath)
+	if error != OK:
+		print("Failed to create and save resource:", error)
+	else:
+		print("New resource created and saved successfully")
 #endregion
 
 #region in-game functionality

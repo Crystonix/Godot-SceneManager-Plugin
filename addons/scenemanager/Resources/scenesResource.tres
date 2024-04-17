@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="sceneResource" load_steps=2 format=3 uid="uid://3ux2lx65uoxj"]
+
+[ext_resource type="Script" path="res://addons/scenemanager/Resources/scenesResource.gd" id="1_n0e3y"]
+
+[resource]
+script = ExtResource("1_n0e3y")
