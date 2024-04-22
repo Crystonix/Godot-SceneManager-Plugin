@@ -6,7 +6,7 @@ class_name SceneCollection
 @export var scenesDictionary:Dictionary # name:CustomScene
 
 func _init():
-	scenesDictionary = {"default": CustomScene.new("no_path")}
+	scenesDictionary = {}
 
 func get_scene_names() -> String:
 	var keys:Array = scenesDictionary.keys()
@@ -27,3 +27,5 @@ func remove_scene(scene_name:String):
 	else:
 		print_debug("successfully erased: ", scene_name)
 
+func clearAllScenes():
+	scenesDictionary = {}

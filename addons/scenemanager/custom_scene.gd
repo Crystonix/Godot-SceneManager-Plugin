@@ -1,10 +1,11 @@
+@tool
 extends Resource
 
 class_name CustomScene
 
-var name:String = "no_name"
-var path:String = "no_path"
+@export var name:String = "no_name"
+@export var path:String = "no_path"
 
-func _init(scene_path:String):
+func _init(scene_path:String = ""):
+	name = scene_path.get_file().get_basename()
 	path = scene_path
-	name = path.get_file().get_basename()

@@ -1,7 +1,7 @@
 @tool
 extends Node
 
-var collection:SceneCollection
+@export var collection:SceneCollection
 
 const resPath:String = "res://addons/scenemanager/Resources/scenesResource.tres"
 var main_scene = null
@@ -26,11 +26,12 @@ func add_scene(path:String):
 	emit_signal("update_ui")
 
 func clearAllScenes():
-	collection.scenesDictionary.clear()
+	collection.clearAllScenes()
+	saveCollection()
 	emit_signal("update_ui")
 
 func loadCollection(path:String):
-	var res = load(path)
+	var res:SceneCollection = load(path)
 	if !res:
 		print_debug("Collection not found, creating a new one...")
 		collection = SceneCollection.new()
@@ -52,15 +53,13 @@ func saveCollection(col:SceneCollection = collection, path:String = resPath):
 #region in-game functionality
 func switch_scene(current:String, target_scene:String):
 	if collection.scenesDictionary.has(target_scene):
-		var cScene:CustomScene = collection.scenesDictionary.get(target_scene)
-		get_tree().change_scene_to_file(cScene.path)
+		get_tree().change_scene_to_file(collection.scenesDictionary.get(target_scene).path)
 		emit_signal("scene_changed")
 	else:
 		printerr(target_scene," scene not in sceneDictionary")
 	
 func _on_scene_changed():
 	await get_tree().create_timer(0.1).timeout 
-	print_debug("current_scene: ", get_tree().get_current_scene())
 #endregion
 
 func _exit_tree():

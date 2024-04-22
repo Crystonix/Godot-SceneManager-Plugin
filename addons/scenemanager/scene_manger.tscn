@@ -19,7 +19,7 @@ text = "add Current Scene"
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 size_flags_vertical = 3
-text = "pause, game, main"
+text = "game, pause, main"
 
 [node name="clearAllScenesButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

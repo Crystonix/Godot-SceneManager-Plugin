@@ -1,21 +1,27 @@
 [gd_resource type="Resource" script_class="SceneCollection" load_steps=6 format=3 uid="uid://3ux2lx65uoxj"]
 
-[ext_resource type="Script" path="res://addons/scenemanager/custom_scene.gd" id="1_8yjak"]
+[ext_resource type="Script" path="res://addons/scenemanager/custom_scene.gd" id="1_5erkm"]
 [ext_resource type="Script" path="res://addons/scenemanager/Resources/scenesResource.gd" id="1_n0e3y"]
 
-[sub_resource type="Resource" id="Resource_jywb8"]
-script = ExtResource("1_8yjak")
+[sub_resource type="Resource" id="Resource_dlnnl"]
+script = ExtResource("1_5erkm")
+name = "game"
+path = "res://Examples/Scenes/game/game.tscn"
 
-[sub_resource type="Resource" id="Resource_wf4hu"]
-script = ExtResource("1_8yjak")
+[sub_resource type="Resource" id="Resource_kepeo"]
+script = ExtResource("1_5erkm")
+name = "main"
+path = "res://Examples/Scenes/main/main.tscn"
 
-[sub_resource type="Resource" id="Resource_letx1"]
-script = ExtResource("1_8yjak")
+[sub_resource type="Resource" id="Resource_gi2th"]
+script = ExtResource("1_5erkm")
+name = "pause"
+path = "res://Examples/Scenes/pause/pause.tscn"
 
 [resource]
 script = ExtResource("1_n0e3y")
 scenesDictionary = {
-"game": SubResource("Resource_jywb8"),
-"main": SubResource("Resource_wf4hu"),
-"pause": SubResource("Resource_letx1")
+"game": SubResource("Resource_dlnnl"),
+"main": SubResource("Resource_kepeo"),
+"pause": SubResource("Resource_gi2th")
 }

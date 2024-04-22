@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Manager="*res://addons/scenemanager/manager.tscn"
-ExampleSetup="*res://Examples/Autoloads/example_setup.gd"
 
 [editor_plugins]
 
