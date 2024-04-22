@@ -3,7 +3,7 @@ extends Node
 
 @export var collection:SceneCollection
 
-const resPath:String = "res://addons/scenemanager/Resources/scenesResource.tres"
+const resPath:String = "user://scenesResource.tres"
 var main_scene = null
 
 signal scene_changed
