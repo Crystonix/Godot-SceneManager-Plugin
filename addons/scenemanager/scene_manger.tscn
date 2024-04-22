@@ -6,17 +6,24 @@
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_nbcbj")
-sceneNamesLabel = NodePath("VBoxContainer/Label")
+sceneNamesLabel = NodePath("VBoxContainer/RichTextLabel")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="addCurrentSceneButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "addCurrentScene"
+text = "add Current Scene"
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-text = "no scenes saved"
+size_flags_vertical = 3
+text = "pause, game, main"
+
+[node name="clearAllScenesButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "clear all Scenes"
 
 [connection signal="pressed" from="VBoxContainer/addCurrentSceneButton" to="." method="_on_add_current_scene_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/clearAllScenesButton" to="." method="_on_clear_all_scenes_button_button_down"]

@@ -1,16 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://q1mvraokshr5"]
+[gd_scene load_steps=2 format=3 uid="uid://q1mvraokshr5"]
 
 [ext_resource type="Script" path="res://addons/scenemanager/manager.gd" id="1_puqvp"]
-[ext_resource type="Resource" uid="uid://3ux2lx65uoxj" path="res://addons/scenemanager/Resources/scenesResource.tres" id="2_ba7jw"]
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_puqvp")
-scenesResource = ExtResource("2_ba7jw")
-sceneDictionary = {
-"default": "default",
-"game": "res://Scenes/game/game.tscn",
-"main": "res://Scenes/main/main.tscn",
-"pause": "res://Scenes/pause/pause.tscn"
-}
-
-[connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]

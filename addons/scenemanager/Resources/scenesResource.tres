@@ -1,12 +1,21 @@
-[gd_resource type="Resource" script_class="sceneResource" load_steps=2 format=3 uid="uid://3ux2lx65uoxj"]
+[gd_resource type="Resource" script_class="SceneCollection" load_steps=6 format=3 uid="uid://3ux2lx65uoxj"]
 
+[ext_resource type="Script" path="res://addons/scenemanager/custom_scene.gd" id="1_8yjak"]
 [ext_resource type="Script" path="res://addons/scenemanager/Resources/scenesResource.gd" id="1_n0e3y"]
+
+[sub_resource type="Resource" id="Resource_jywb8"]
+script = ExtResource("1_8yjak")
+
+[sub_resource type="Resource" id="Resource_wf4hu"]
+script = ExtResource("1_8yjak")
+
+[sub_resource type="Resource" id="Resource_letx1"]
+script = ExtResource("1_8yjak")
 
 [resource]
 script = ExtResource("1_n0e3y")
 scenesDictionary = {
-"default": "default",
-"game": "res://Scenes/game/game.tscn",
-"main": "res://Scenes/main/main.tscn",
-"pause": "res://Scenes/pause/pause.tscn"
+"game": SubResource("Resource_jywb8"),
+"main": SubResource("Resource_wf4hu"),
+"pause": SubResource("Resource_letx1")
 }

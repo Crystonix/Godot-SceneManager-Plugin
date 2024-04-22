@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Godot-SceneManager-Plugin"
-run/main_scene="res://Scenes/main/main.tscn"
+run/main_scene="res://Examples/Scenes/main/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Manager="*res://addons/scenemanager/manager.tscn"
+ExampleSetup="*res://Examples/Autoloads/example_setup.gd"
 
 [editor_plugins]
 
