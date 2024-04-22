@@ -23,6 +23,7 @@ func getSceneNames() -> String:
 
 func add_scene(path:String):
 	collection.add_Scene(path)
+	saveCollection()
 	emit_signal("update_ui")
 
 func clearAllScenes():
